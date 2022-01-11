@@ -13,10 +13,10 @@ script:
 deploy: 
   provider: elastickbeanstalk
   region: "us-east-1"
-  app: "Dockerreactudemy" 
+  app: "docker-react-udemy" 
   env: "Dockerreactudemy-env"
   bucket_name: "elasticbeanstalk-us-east-1-994527103245"
-  bucket_path: "Dockerreactudemy"
+  bucket_path: "docker-react-udemy"
   on:
     branch: master 
       
