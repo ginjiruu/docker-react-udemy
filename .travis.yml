@@ -1,5 +1,6 @@
 language: generic
 sudo: required
+
 services: 
   - docker
 
@@ -8,3 +9,17 @@ before_install:
 
 script:
   - docker run -e CI=true docker-react-udemy npm run test -- --coverage
+    
+deploy: 
+  provider: elastickbeanstalk
+  region: "us-east-1"
+  app: "Dockerreactudemy" 
+  env: "Dockerreactudemy-env"
+  bucket_name: "elasticbeanstalk-us-east-1-994527103245"
+  bucket_path: "Dockerreactudemy"
+  on:
+    branch: master 
+      
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
